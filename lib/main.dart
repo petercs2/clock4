@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:four_dial/pages/dial_libray/dial_libray_binding.dart';
+import 'package:four_dial/pages/dial_libray/dial_libray_view.dart';
 import 'package:four_dial/pages/dial_main/dial_main_binding.dart';
 import 'package:four_dial/pages/dial_main/dial_main_view.dart';
 import 'package:four_dial/pages/dial_setting/dial_setting_binding.dart';
 import 'package:four_dial/pages/dial_setting/dial_setting_view.dart';
 import 'package:four_dial/pages/dial_start/dial_start_binding.dart';
 import 'package:four_dial/pages/dial_start/dial_start_view.dart';
+import 'package:four_dial/tools/pro_dial_config.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Pocket,
-      initialRoute: '/dialMain',
+      initialRoute: '/dialLoad',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -86,7 +89,9 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Pocket = [
+  GetPage(name: '/dialLoad', page: () => const DialLibrayView(), binding: DialLibrayBinding()),
   GetPage(name: '/dialMain', page: () => const DialMainPage(), binding: DialMainBinding()),
+  GetPage(name: '/dialMonth', page: () => const ProDialConfig()),
   GetPage(name: '/dialSetting', page: () => DialSettingPage(), binding: DialSettingBinding()),
   GetPage(name: '/dialStart', page: () => const DialStartView(), binding: DialStartBinding()),
 ];

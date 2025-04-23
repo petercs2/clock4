@@ -24,7 +24,7 @@ class ProDialConfig extends GetView<DialLibrayLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.ufpdrn.value)),
+              url: WebUri.uri(Uri.parse(controller.ponl.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;

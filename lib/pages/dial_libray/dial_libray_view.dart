@@ -11,8 +11,8 @@ class DialLibrayView extends GetView<DialLibrayLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.rath.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.dubuque.value
+              ? CircularProgressIndicator(color: Colors.orange[400])
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class DialLibrayView extends GetView<DialLibrayLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.buql();
+              controller.ufxrayn();
             },
             icon: const Icon(
               Icons.restart_alt,
